@@ -47,8 +47,9 @@
 
     const num = 10;
     const daikichi = Math.floor(Math.random() * num);
-    const tyukichi = Math.floor(Math.random() * num); 
-    const shokichi = Math.floor(Math.random() * num);
+    const kyou = Math.floor(Math.random() * num); 
+    const shokichi1 = Math.floor(Math.random() * num);
+    const shokichi2 = Math.floor(Math.random() * num);
 
     for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
@@ -59,15 +60,15 @@
           div.textContent = '大吉!';
           div.classList.add('dai');
           alert('大吉おめでとう！');
-        } else if(i === tyukichi) {
-          div.textContent = '中吉!';
-          div.classList.add('tyu');
-        } else if(i === shokichi) {
+        } else if(i === kyou) {
+          div.textContent = '凶!';
+          div.classList.add('kyo');
+        } else if(i === shokichi1 || i === shokichi2) {
           div.textContent = '小吉!';
           div.classList.add('sho');
         } else {
-          div.textContent = '凶!';
-          div.classList.add('kyo');
+          div.textContent = '中吉!';
+          div.classList.add('tyu');
         }
       });
 
