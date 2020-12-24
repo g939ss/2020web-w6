@@ -18,12 +18,24 @@
       text-align: center;
       line-height: 100px;
     }
-    .win {
+    .dai {
       background: pink;
       border-radius: 50%;
       transform: rotate(360deg);
     }
-    .lose {
+    .tyu {
+      background: yellow;
+      border-radius: 50% 50% 0 50%;
+      transform: rotate(360deg);
+    }
+    .sho {
+      background: yellowgreen;
+      border-radius: 40px 10px;
+      transform: rotate(360deg);
+      transform: scale(0.9);
+    }
+    .kyo {
+      border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
       transform: scale(0.9);
     }
   </style>
@@ -33,20 +45,29 @@
   <script>
     'use strict';
 
-    const num = 5;
-    const winner = Math.floor(Math.random() * num); // 0 - 4
+    const num = 10;
+    const daikichi = Math.floor(Math.random() * num);
+    const tyukichi = Math.floor(Math.random() * num); 
+    const shokichi = Math.floor(Math.random() * num);
 
     for (let i = 0; i < num; i++) {
       const div = document.createElement('div');
       div.classList.add('box');
       
       div.addEventListener('click', () => {
-        if (i === winner) {
-          div.textContent = 'Win!';
-          div.classList.add('win');
+        if (i === daikichi) {
+          div.textContent = '大吉!';
+          div.classList.add('dai');
+          alert('大吉おめでとう！');
+        } else if(i === tyukichi) {
+          div.textContent = '中吉!';
+          div.classList.add('tyu');
+        } else if(i === shokichi) {
+          div.textContent = '小吉!';
+          div.classList.add('sho');
         } else {
-          div.textContent = 'Lose!';
-          div.classList.add('lose');
+          div.textContent = '凶!';
+          div.classList.add('kyo');
         }
       });
 
